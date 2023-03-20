@@ -30,5 +30,11 @@ namespace choreScoreGood.Repositories
     {
       return dbChores;
     }
+
+    internal Chore GetOneChore(int id)
+    {
+      Chore chore = dbChores.Find(chore => chore.Id == id);
+      return chore;
+    }
   }
 }

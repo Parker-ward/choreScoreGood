@@ -29,5 +29,34 @@ namespace choreScoreGood.Controllers
       }
 
     }
+
+    [HttpGet("{id}")]
+
+    public ActionResult<Chore> GetOneChore(int id)
+    {
+      try
+      {
+        Chore chore = _choresService.GetOneChore(id);
+        return Ok(chore);
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
+
+    [HttpPut("{id}/done")]
+    public ActionResult<Chore> IsDone(int id)
+    {
+      try
+      {
+        Chore chore = _choresService.IsDone(id);
+        return Ok(chore);
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
   }
 }

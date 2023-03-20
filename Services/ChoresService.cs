@@ -17,5 +17,20 @@ namespace choreScoreGood.Services
     {
       return _repo.GetAllChores();
     }
+
+    internal Chore IsDone(int id)
+    {
+      Chore chore = this.GetOneChore(id);
+      chore.IsDone();
+      return chore;
+    }
+
+    internal Chore GetOneChore(int id)
+    {
+      Chore chore = _repo.GetOneChore(id);
+      if (chore == null) throw new Exception($"No chore at this id{id}");
+      return chore;
+
+    }
   }
 }
