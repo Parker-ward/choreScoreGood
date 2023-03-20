@@ -17,15 +17,6 @@ namespace choreScoreGood.Repositories
       dbChores.Add(new Chore("dust", 6, "thursday", "bedrooms", 2565913));
     }
 
-
-
-
-
-
-
-
-
-
     internal List<Chore> GetAllChores()
     {
       return dbChores;
